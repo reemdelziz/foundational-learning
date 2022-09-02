@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+//08-24-2021
+
+int main() {
+  int numLines;
+  //ask user for number of lines
+  cout << "How many lines will be input? ";
+  cin >> numLines;
+  //create an array to hold input
+  string input[numLines];
+
+  //populate array
+  cin.ignore();
+  for (int i = 0; i < numLines; i++) {
+    cout << "Enter line: ";
+    getline(cin, input[i]);
+  }
+
+  //print in reverse order with for loop starting from array size
+  for (int i = numLines - 1; i >= 0; i--) {
+    cout << input[i] << endl;
+  }
+}

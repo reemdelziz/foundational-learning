@@ -1,0 +1,68 @@
+#include <iostream>
+
+using namespace std;
+
+/* R2.12 Generalize the Person-Student class hierarchy to include classes Faculty, UndergraduateStudent, GraduateStudent, Professor, Instructor. 
+Explain the inheritance structure of these classes, and derive some appropriate member variables for each class. */
+
+class Person {
+  public:
+    Person(string n, int ID) : name(n), id(ID){}
+    virtual void print() {
+      cout << "Name: " << name << endl;
+      cout << "ID: " << id << endl;
+    }
+    string getName()
+    {
+      return name;
+    }
+  private:
+    string name;
+    int id;
+};
+
+class Student : public Person {
+  public:
+    Student(string n, int ID, string m, int y): Person(n,ID), sMajor(m), gradYear(y){}
+    void print() {
+      Person::print();
+      cout << "Major: " << sMajor << endl;
+      cout << "Graduating Year: " << gradYear << endl;
+    }
+    void changeMajor(const string& newMajor)
+    {
+      sMajor = newMajor;
+    }
+  private:
+    string sMajor;
+    int gradYear;
+};
+
+class Faculty : public Person {
+  public:
+  private:
+};
+
+class UndergraduateStudent : public Student {
+  public:
+  private:
+};
+
+class GraduateStudent : public Student {
+  public:
+  private:
+};
+
+class Professor : public Faculty {
+  public:
+  private:
+};
+
+class Instructure : public Faculty {
+  public:
+  private:
+};
+
+int main() {
+  
+}

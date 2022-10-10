@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+void pname (int counter) {
+  if(counter == 0)
+    return;
+  else {
+    cout << counter << endl;
+    pname(counter-1);
+  }
+}
+
+int main(int argc, char *argv[]) {
+  pname(10);
+}
